@@ -10,7 +10,7 @@ terraform {
 
 # 2. ランダムな文字列の生成（パスワード風）
 resource "random_password" "db_password" {
-  length           = 16
+  length           = 12
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
