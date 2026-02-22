@@ -17,7 +17,7 @@ resource "random_password" "db_password" {
 
 # 3. ランダムなペット名の生成（サーバー名などに便利）
 resource "random_pet" "server_name" {
-  length    = 4
+  length    = 5
   separator = "-"
 }
 
