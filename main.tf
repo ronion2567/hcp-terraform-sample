@@ -1,4 +1,3 @@
-# 1. 使用するプロバイダーの設定
 terraform {
   required_providers {
     random = {
@@ -8,23 +7,27 @@ terraform {
   }
 }
 
-# 2. ランダムな文字列の生成（パスワード風）
 resource "random_password" "db_password" {
-  length           = 147efaw
+  length           = 16
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
-# 3. ランダムなペット名の生成（サーバー名などに便利）
 resource "random_pet" "server_name" {
   length    = 5
   separator = "-"
 }
 
-# 4. 実行結果の出力
+# 👇 Apply中に失敗させるリソース
+resource "null_resource" "force_failure" {
+  provisioner "local-exec" {
+    command = "exit 1"
+  }
+}
+
 output "generated_password" {
   value     = random_password.db_password.result
-  sensitive = true # パスワードなのでコンソール上で隠す設定
+  sensitive = true
 }
 
 output "generated_server_name" {
