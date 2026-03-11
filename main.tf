@@ -2,7 +2,7 @@
 terraform {
   required_providers {
     random = {
-      source  = "hashicorp/randomaaiu"
+      source  = "hashicorp/random"
       version = "~> 3.0"
     }
   }
@@ -10,7 +10,7 @@ terraform {
 
 # 2. ランダムな文字列の生成（パスワード風）
 resource "random_password" "db_password" {
-  length           = 14
+  length           = 147
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
