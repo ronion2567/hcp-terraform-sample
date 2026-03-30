@@ -8,7 +8,7 @@ terraform {
 }
 
 resource "random_password" "db_password" {
-  length           = 14
+  length           = 13
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
