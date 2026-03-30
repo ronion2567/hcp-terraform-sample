@@ -18,6 +18,17 @@ resource "random_pet" "server_name" {
   separator = "-"
 }
 
+resource "random_pet" "server_name2" {
+  length    = 5
+  separator = "-"
+}
+
+resource "random_pet" "server_name3" {
+  length    = 5
+  separator = "-"
+}
+
+
 output "generated_password" {
   value     = random_password.db_password.result
   sensitive = true
