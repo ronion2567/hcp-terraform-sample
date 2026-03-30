@@ -18,13 +18,6 @@ resource "random_pet" "server_name" {
   separator = "-"
 }
 
-# 👇 Apply中に失敗させるリソース
-resource "null_resource" "force_failure" {
-  provisioner "local-exec" {
-    command = "exit 1"
-  }
-}
-
 output "generated_password" {
   value     = random_password.db_password.result
   sensitive = true
