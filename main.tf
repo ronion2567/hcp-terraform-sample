@@ -32,6 +32,7 @@ resource "random_pet" "server_name3" {
 output "generated_password" {
   value     = random_password.db_password.result
   sensitive = true
+  desctiption = "test"
 }
 
 output "generated_server_name" {
